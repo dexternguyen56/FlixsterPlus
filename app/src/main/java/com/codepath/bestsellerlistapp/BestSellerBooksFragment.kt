@@ -22,7 +22,7 @@ import org.json.JSONObject
 // --------------------------------//
 // CHANGE THIS TO BE YOUR API KEY  //
 // --------------------------------//
-private const val API_KEY = "hFhwXnSubGLcXIFIIw5KUR74GRNVRpwe"
+private const val API_KEY = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
 
 /*
  * The class for the only fragment in the app, which contains the progress bar,
@@ -56,12 +56,12 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
         // Create and set up an AsyncHTTPClient() here
         val client = AsyncHttpClient()
         val params = RequestParams()
-        params["api-key"] = API_KEY
+        params["api_key"] = API_KEY
         // Using the client, perform the HTTP request
 
          //Uncomment me once you complete the above sections!
         client[
-                "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json",
+                "https://api.themoviedb.org/3/movie/now_playing",
                 params,
                 object : JsonHttpResponseHandler()
         {
@@ -77,8 +77,9 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
                 // The wait for a response is over
                 progressBar.hide()
 
-                val resultsJSON : JSONObject = json.jsonObject.get("results") as JSONObject
-                val booksRawJSON : String = resultsJSON.get("books").toString()
+                val resultsJSON : JSONObject = json.jsonObject as JSONObject
+
+                val booksRawJSON : String = resultsJSON.get("results").toString()
 
                 //TODO - Parse JSON into Models
                 val gson = Gson()

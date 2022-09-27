@@ -61,7 +61,7 @@ class BestSellerBooksRecyclerViewAdapter(
         //holder.mBookRanking.text = book.rank.toString()
 
         Glide.with(holder.mView)
-            .load(book.bookImageUrl)
+            .load( "https://image.tmdb.org/t/p/w500" + book.bookImageUrl)
             .centerInside()
             .into(holder.mBookImage)
 

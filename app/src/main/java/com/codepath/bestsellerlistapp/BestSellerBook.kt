@@ -12,17 +12,17 @@ class BestSellerBook {
     @SerializedName("rank")
     var rank = 0
 
-    @SerializedName("book_image")
+    @SerializedName("poster_path")
     var bookImageUrl: String? = null
 
-    @SerializedName("description")
+    @SerializedName("overview")
     var description: String? = null
 
     @SerializedName("amazon_product_url")
     var amazonUrl: String? = null
 
     @JvmField
-    @SerializedName("title")
+    @SerializedName("original_title")
     var title: String? = null
 
     @JvmField
