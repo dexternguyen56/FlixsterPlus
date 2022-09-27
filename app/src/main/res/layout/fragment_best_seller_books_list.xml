@@ -10,11 +10,13 @@
         android:name="com.codepath.bestsellerlistapp.BestSellerBooksFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        app:layoutManager="LinearLayoutManager"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         tools:context=".BestSellerBooksFragment"
+        app:layoutManager="LinearLayoutManager"
         tools:listitem="@layout/fragment_best_seller_book" />
+
+
 
     <androidx.core.widget.ContentLoadingProgressBar
         android:id="@+id/progress"

@@ -37,15 +37,15 @@ class BestSellerBooksRecyclerViewAdapter(
 
         var mItem: BestSellerBook? = null
         val mBookTitle: TextView = mView.findViewById<View>(id.book_title) as TextView
-        val mBookAuthor: TextView = mView.findViewById<View>(id.book_author) as TextView
-        val mBookRanking: TextView = mView.findViewById<View>(id.ranking) as TextView
+        //val mBookAuthor: TextView = mView.findViewById<View>(id.book_author) as TextView
+        //val mBookRanking: TextView = mView.findViewById<View>(id.ranking) as TextView
         val mBookDescription: TextView = mView.findViewById<View>(id.book_description) as TextView
         val mBookImage: ImageView = mView.findViewById<View>(id.book_image) as ImageView
-        val mBookButton: Button = mView.findViewById<Button>(id.buy_button) as Button
+        //val mBookButton: Button = mView.findViewById<Button>(id.buy_button) as Button
 
-        override fun toString(): String {
-            return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
-        }
+//        override fun toString(): String {
+//            //return mBookTitle.toString() + " '" + mBookAuthor.text + "'"
+//        }
     }
 
     /**
@@ -56,9 +56,9 @@ class BestSellerBooksRecyclerViewAdapter(
 
         holder.mItem = book
         holder.mBookTitle.text = book.title
-        holder.mBookAuthor.text = book.author
+        //holder.mBookAuthor.text = book.author
         holder.mBookDescription.text = book.description
-        holder.mBookRanking.text = book.rank.toString()
+        //holder.mBookRanking.text = book.rank.toString()
 
         Glide.with(holder.mView)
             .load(book.bookImageUrl)
@@ -70,10 +70,10 @@ class BestSellerBooksRecyclerViewAdapter(
                 mListener?.onItemClick(book)
             }
         }
-        holder.mBookButton.setOnClickListener {
-            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(book.amazonUrl))
-            startActivity(it.context, browserIntent, null)
-        }
+//        holder.mBookButton.setOnClickListener {
+//            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(book.amazonUrl))
+//            startActivity(it.context, browserIntent, null)
+//        }
     }
 
     /**
