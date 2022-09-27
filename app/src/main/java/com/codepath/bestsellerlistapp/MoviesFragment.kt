@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.codepath.asynchttpclient.AsyncHttpClient
 import com.codepath.asynchttpclient.RequestParams
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler
-import com.codepath.bestsellerlistapp.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import okhttp3.Headers
@@ -37,7 +36,7 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_best_seller_books_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_movies_list, container, false)
         val progressBar = view.findViewById<View>(R.id.progress) as ContentLoadingProgressBar
         val recyclerView = view.findViewById<View>(R.id.list) as RecyclerView
         val context = view.context
@@ -83,9 +82,9 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
 
                 //TODO - Parse JSON into Models
                 val gson = Gson()
-                val arrayBookType = object : TypeToken<List<BestSellerBook>>() {}.type
-                val models : List<BestSellerBook> = gson.fromJson(booksRawJSON, arrayBookType)
-                recyclerView.adapter = BestSellerBooksRecyclerViewAdapter(models, this@BestSellerBooksFragment)
+                val arrayBookType = object : TypeToken<List<Movies>>() {}.type
+                val models : List<Movies> = gson.fromJson(booksRawJSON, arrayBookType)
+                recyclerView.adapter = MoviesRecyclerViewAdapter(models, this@BestSellerBooksFragment)
 
                 // Look for this in Logcat:
                 Log.d("BestSellerBooksFragment", "response successful")
@@ -117,7 +116,7 @@ class BestSellerBooksFragment : Fragment(), OnListFragmentInteractionListener {
     /*
      * What happens when a particular book is clicked.
      */
-    override fun onItemClick(item: BestSellerBook) {
+    override fun onItemClick(item: Movies) {
         Toast.makeText(context, "test: " + item.title, Toast.LENGTH_LONG).show()
     }
 

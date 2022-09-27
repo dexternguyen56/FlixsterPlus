@@ -14,7 +14,7 @@
         android:layout_marginRight="5dp"
         tools:context=".BestSellerBooksFragment"
         app:layoutManager="LinearLayoutManager"
-        tools:listitem="@layout/fragment_best_seller_book" />
+        tools:listitem="@layout/fragment_movies" />
 
 
 
